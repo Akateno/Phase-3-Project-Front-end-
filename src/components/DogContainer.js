@@ -21,7 +21,7 @@ function DogContainer () {
   //     .then((applicants) => setDogs(applicants));
   // }, []);
 
-  function handleDogs(newDog) {
+  function handleAddDog(newDog) {
     setDogs([...dogs, newDog]);
   }
   function handleDeleteDog(id) {
@@ -36,7 +36,7 @@ function DogContainer () {
   return <div className="dogcontainer" >
     <h1 className="DogPageHeader" >Happy Tails Animal Rescue!</h1>
       <Search searchTerm={search} onChangeSearch={setSearch}/>
-      {/* <DogForm handleAddAnimal={handleAddAnimal}/> */}
+      {<DogForm handleAddDog={handleAddDog}/>}
       <DogList doggos={displayedDogs} onDogDelete={handleDeleteDog}/>
         
     </div>
