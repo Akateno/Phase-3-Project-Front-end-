@@ -7,7 +7,7 @@ function ApplicantList({ applicants }) {
   }
   return (
     <div className="appList">
-      <ul>
+      <div>
         {applicants.map((applicant) => (
           <ApplicantCard
             key={applicant.id}
@@ -15,9 +15,9 @@ function ApplicantList({ applicants }) {
             onClick={handleListClick}
           />
         ))}
-      </ul>
+      </div>
       <div className="ProfileCard">
-        <h2>Applicant Profile</h2>
+        {/* <h2>Applicant Profile</h2> */}
         <p></p>
         <p></p>
         <p></p>

@@ -11,8 +11,8 @@ function ApplicantPage() {
   }, []);
 
   return (
-    <div>
-      <h2>Applicant List</h2>
+    <div className="pendingApp">
+      <h2 id="pendingAppHeader">Pending Applicants</h2>
       <ApplicantList applicants={applicants} />
     </div>
   );

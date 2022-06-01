@@ -5,55 +5,47 @@
   flex-direction: column;
   align-items: center;
   font-weight: bold;
-  
-  
 }
 
-  
-.hometitle{
+.hometitle {
   font-family: fantasy;
   margin: auto;
   width: 50%;
   text-align: center;
   padding: 10px;
   border-radius: 25px;
-  border: 2px solid #C4ADC9;
+  border: 2px solid #c4adc9;
   padding: 20px;
   width: 450px;
   height: 50px;
-  
 }
-.DogPageHeader{
+.DogPageHeader {
   font-family: fantasy;
   margin: auto;
   width: 50%;
   text-align: center;
   padding: 10px;
   border-radius: 25px;
-  border: 5px solid #C4ADC9;
+  border: 5px solid #c4adc9;
   padding: 20px;
   width: 450px;
   height: 50px;
-
 }
-.pageTitle{
-  position:absolute;
+.pageTitle {
+  position: absolute;
   padding-top: 250px;
   padding-left: 950px;
-
 }
 
-.dogcontainer{
+.dogcontainer {
   background-color: rgba(246, 208, 18, 0.945);
   text-align: center;
 }
 .card {
-  
   color: black;
   font-family: "Georgia";
-  border: 10px solid #83CBEF;
+  border: 10px solid #83cbef;
   text-align: center;
-  
 }
 @media (min-width: 768px) {
   .cards {
@@ -88,22 +80,20 @@
 .cardPic {
   width: 100%;
 }
-.primary{
+.primary {
   background-color: aliceblue;
   border-radius: 10px;
-  
 }
 
 .card button {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.traitList{
+.traitList {
   align-items: center;
   background-color: aliceblue;
   margin-left: 20px;
   margin-right: 20px;
-  
 }
 /* .cardPic {
   width: 500px;
@@ -121,17 +111,44 @@
 
 .searchTerm {
   width: 50%;
-  border: 3px solid #00B4CC;
+  border: 3px solid #00b4cc;
   padding: 5px;
   height: 20px;
   border-radius: 5px;
   outline: none;
-  color: #9DBFAF;
+  color: #9dbfaf;
 }
 
-.searchTerm:focus{
-  color: #00B4CC;
+.searchTerm:focus {
+  color: #00b4cc;
 }
 
+.appCard {
+  display: inline-block;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 30px;
+  text-align: center;
+}
 
+.appCard:hover {
+  background-color: grey;
+}
 
+.appImage {
+  width: 160px;
+  border: 2px solid black;
+}
+
+.pendingApp {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  padding-left: 20%;
+  padding-right: 5%;
+}
+
+#pendingAppHeader {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 36px;
+}

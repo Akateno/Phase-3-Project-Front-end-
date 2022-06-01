@@ -1,13 +1,11 @@
+import React, { useEffect, useState } from "react";
+import Search from "./Search";
+import DogList from "./DogList";
+import DogForm from "./DogForm";
 
-import React, {useEffect, useState} from "react"
-import Search from "./Search"
-import DogList from "./DogList"
-import DogFrom from "./DogForm"
-
-
-function DogContainer () {
+function DogContainer() {
   const [dogs, setDogs] = useState([]);
-  const [search, setSearch]=useState("")
+  const [search, setSearch] = useState("");
   // const [applicants, setApplicants] = useState([]);
 
   useEffect(() => {
@@ -29,20 +27,19 @@ function DogContainer () {
     const updatedDogs = dogs.filter((dog) => dog.id !== id);
     setDogs(updatedDogs);
   }
-  
-  const displayedDogs = dogs.filter(anim =>
-    anim.name.toLowerCase().includes(search.toLowerCase())
-  )
 
-  return <div className="dogcontainer" >
-    <h1 className="DogPageHeader" >Happy Tails Animal Rescue!</h1>
-      <Search searchTerm={search} onChangeSearch={setSearch}/>
-      {<DogForm handleAddDog={handleAddDog}/>}
-      <DogList doggos={displayedDogs} onDogDelete={handleDeleteDog}/>
-        
+  const displayedDogs = dogs.filter((anim) =>
+    anim.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <div className="dogcontainer">
+      <h1 className="DogPageHeader">Happy Tails Animal Rescue!</h1>
+      <Search searchTerm={search} onChangeSearch={setSearch} />
+      {<DogForm handleAddDog={handleAddDog} />}
+      <DogList doggos={displayedDogs} onDogDelete={handleDeleteDog} />
     </div>
+  );
 }
 
-export default DogContainer
-
-
+export default DogContainer;
