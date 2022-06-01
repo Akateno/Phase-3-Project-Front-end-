@@ -1,40 +1,47 @@
-import React, { useState } from "react";
 
-function NewMessage({ currentUser, onAddMessage }) {
-  const [body, setBody] = useState("");
+import React, {useEffect, useState} from "react"
+import Search from "./Search"
+import DogList from "./DogList"
 
-  function handleSubmit(e) {
-    e.preventDefault();
 
-    fetch("http://localhost:4000/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: currentUser.username,
-        body: body,
-      }),
-    })
+function DogContainer () {
+  const [dogs, setDogs] = useState([]);
+  const [search, setSearch]=useState("")
+  // const [applicants, setApplicants] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/dogs")
       .then((r) => r.json())
-      .then((newMessage) => {
-        onAddMessage(newMessage);
-        setBody("");
-      });
-  }
+      .then((dogs) => setDogs(dogs));
+  }, []);
 
-  return (
-    <form className="new-message" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="body"
-        autoComplete="off"
-        value={body}
-        onChange={(e) => setBody(e.target.value)}
-      />
-      <button type="submit">Send</button>
-    </form>
-  );
+  // useEffect(() => {
+  //   fetch("http://localhost:9292/dogs")
+  //     .then((r) => r.json())
+  //     .then((applicants) => setDogs(applicants));
+  // }, []);
+
+  function handleDogs(newDog) {
+    setDogs([...dogs, newDog]);
+  }
+  function handleDeleteDog(id) {
+    const updatedDogs = dogs.filter((dog) => dog.id !== id);
+    setDogs(updatedDogs);
+  }
+  
+  const displayedDogs = dogs.filter(anim =>
+    anim.name.toLowerCase().includes(search.toLowerCase())
+  )
+
+  return <div className="dogcontainer" >
+    <h1 className="DogPageHeader" >Happy Tails Animal Rescue!</h1>
+      <Search searchTerm={search} onChangeSearch={setSearch}/>
+      {/* <DogForm handleAddAnimal={handleAddAnimal}/> */}
+      <DogList doggos={displayedDogs} onDogDelete={handleDeleteDog}/>
+        
+    </div>
 }
 
-export default NewMessage;
+export default DogContainer
+
+

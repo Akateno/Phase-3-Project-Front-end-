@@ -1,20 +1,36 @@
-import React from "react";
+import React from "react"
+import {NavLink} from "react-router-dom";
 
-function Header({ isDarkMode, onToggleDarkMode }) {
-  return (
-    <header>
-      <h1>Danny Devito</h1>
-      <div className="toggle-switch">
-        <input
-          type="checkbox"
-          id="toggle-dark-mode"
-          checked={isDarkMode}
-          onChange={(e) => onToggleDarkMode(e.target.checked)}
-        />
-        <label htmlFor="toggle-dark-mode"></label>
-      </div>
-    </header>
-  );
+function NavBar () {
+    const linkStyles = {
+        display: "inline-block",
+        width: "60px",
+        padding: "12px",
+        margin: "6px 6px 6px",
+        background: "yellow",
+        textDecoration: "none",
+        color: "black",
+      
+      };
+    return (
+    <div className="navbar">
+        <NavLink to="/" exact style={linkStyles}
+        activeStyle={{
+          background: "lightblue",
+        }}>
+        Home</NavLink>
+        <NavLink style={linkStyles}
+        activeStyle={{
+          background: "lightblue",
+        }}to="/adopt"> 
+        Adopt </NavLink>
+        <NavLink style={linkStyles}
+        activeStyle={{
+          background: "lightblue",
+        }}to="/applicants">
+             Applicants </NavLink>
+    </div>
+    )
 }
 
-export default Header;
+export default NavBar

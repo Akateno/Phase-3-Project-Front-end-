@@ -1,18 +1,23 @@
-import React from "react";
+import React from "react"
 
-function Search({ search, onSearchChange }) {
+function Search({searchTerm, onChangeSearch}) {
+
+  function handleChange(event){
+    return onChangeSearch(event.target.value)
+  }
+
   return (
-    <nav>
-      <input
-        type="text"
-        name="search"
-        placeholder="Search..."
-        autoComplete="off"
-        value={search}
-        onChange={e => onSearchChange(e.target.value)}
-      />
-    </nav>
-  );
-}
-
-export default Search;
+      <div className="searchbar">
+            <label htmlFor="search">Search Animals:</label>
+            <input width="500"
+              type="text"
+              id="search"
+              placeholder="Type a name to search..."
+              value={searchTerm}
+              onChange={handleChange}
+          />
+      </div>
+    );
+  }
+  
+  export default Search;

@@ -1,27 +1,35 @@
-import React from "react";
-import Message from "./Message";
+import React, {useState} from "react";
 
-function MessageList({
-  messages,
-  currentUser,
-  onMessageDelete,
-  onUpdateMessage,
-}) {
-  return (
-    <div className="list">
-      <ul>
-        {messages.map((message) => (
-          <Message
-            key={message.id}
-            message={message}
-            currentUser={currentUser}
-            onMessageDelete={onMessageDelete}
-            onUpdateMessage={onUpdateMessage}
-          />
-        ))}
-      </ul>
-    </div>
-  );
+function DogCard({name, breed, age, trait, image, onDogDelete, id}) {
+    const [adopt, setAdopt]=useState(false)
+    
+    
+
+    function handleDeleteClick() {
+      fetch(`http://localhost:9292/dogs/${id}`, {
+        method: "DELETE",
+      });
+  
+      onDogDelete(id);
+      
+    }
+
+  return ( <div className="card">
+  <img className="cardPic"src={image} alt={name} width="500" height="600"/>
+  <h2>{name}</h2>
+  <ul>
+    <p><em><strong>Breed:</strong> {breed} </em> </p>
+    <p><em><strong>Age:</strong> {age}</em></p>
+    <p><em><strong>Personality:</strong> {trait}</em></p>
+  </ul>
+
+  {(adopt) ? (
+    <button className="adopted"> Adopted!</button>
+  ) : (
+    <button onClick={handleDeleteClick} className="primary">Adopt</button>
+  )}
+</div>)
+  
 }
 
-export default MessageList;
+export default DogCard;
