@@ -2,7 +2,7 @@
 import React, {useEffect, useState} from "react"
 import Search from "./Search"
 import DogList from "./DogList"
-import DogFrom from "./DogForm"
+import DogForm from "./DogForm"
 
 
 function DogContainer () {

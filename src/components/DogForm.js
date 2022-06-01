@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function DogForm({handleAddDog}) {
   //const form = document.getElementById('form');
   const [name, setName] = useState('');
@@ -7,11 +6,8 @@ function DogForm({handleAddDog}) {
   const [age, setAge] = useState('');
   const [trait, setTrait] = useState('');
   const [image, setImage] = useState('');
-  
-
   const handleNewDogs =(e)=>{
     e.preventDefault();
-      
     fetch('http://localhost:9292/dogs',{
       method: 'POST',
       headers: {
@@ -26,22 +22,12 @@ function DogForm({handleAddDog}) {
       }),
     }).then(resp=>resp.json())
       .then(newDog =>{
-
-      handleAddDog(newDog); 
-      
+      handleAddDog(newDog);
     });
-      
-  
 };
-
   return (
-<<<<<<< HEAD
-      <div className="ui segment"> 
-        <form id='form' className="ui form" onClick={handleNewDogs} >
-=======
       <div className="ui segment">
         <form id='form' className="ui form" onSubmit={handleNewDogs} >
->>>>>>> d92aa8c (fixed the form)
           <div className="inline fields" >
             <input type="text" name="name" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
             <input type="text" name="breed" placeholder="Breed" value={breed} onChange={(e)=>setBreed(e.target.value)} />
@@ -56,8 +42,22 @@ function DogForm({handleAddDog}) {
       </div>
     );
   }
-
 export default DogForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function EditMessage({ id, body, onUpdateMessage }) {
 //   const [messageBody, setMessageBody] = useState(body);
