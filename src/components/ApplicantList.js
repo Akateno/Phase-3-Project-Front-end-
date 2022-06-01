@@ -18,6 +18,9 @@ function ApplicantList({ applicants }) {
       </ul>
       <div className="ProfileCard">
         <h2>Applicant Profile</h2>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
     </div>
   );
