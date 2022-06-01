@@ -1,14 +1,13 @@
 import React from "react";
 import DogCard from "./DogCard";
 
-function DogList ({doggos, onDogDelete}) {
-  
+function DogList({ doggos, onDogDelete }) {
   return (
     <div className="cards">
-        {
-        doggos.map((animal)=>(
-          <DogCard
+      {doggos.map((animal) => (
+        <DogCard
           id={animal.id}
+          key={animal.id}
           name={animal.name}
           breed={animal.breed}
           age={animal.age}
@@ -16,9 +15,10 @@ function DogList ({doggos, onDogDelete}) {
           image={animal.image}
           onDogDelete={onDogDelete}
           doggos={doggos}
-          />
-        ))}
-    </div>)
+        />
+      ))}
+    </div>
+  );
 }
 
-export default DogList
+export default DogList;

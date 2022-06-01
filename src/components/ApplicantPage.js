@@ -1,57 +1,21 @@
-import React, { useState } from "react";
-import EditMessage from "./EditMessage";
+import React, { useState, useEffect } from "react";
+import ApplicantList from "./ApplicantList.js";
 
-function Message({ message, currentUser, onMessageDelete, onUpdateMessage }) {
-  const [isEditing, setIsEditing] = useState(false);
+function ApplicantPage() {
+  const [applicants, setApplicants] = useState([]);
 
-  const { id, username, body, created_at: createdAt } = message;
-
-  const timestamp = new Date(createdAt).toLocaleTimeString();
-
-  const isCurrentUser = currentUser.username === username;
-
-  function handleDeleteClick() {
-    fetch(`http://localhost:4000/messages/${id}`, {
-      method: "DELETE",
-    });
-
-    onMessageDelete(id);
-  }
-
-  function handleUpdateMessage(updatedMessage) {
-    setIsEditing(false);
-    onUpdateMessage(updatedMessage);
-  }
+  useEffect(() => {
+    fetch("http://localhost:9292/applicants")
+      .then((res) => res.json())
+      .then((applicants) => setApplicants(applicants));
+  }, []);
 
   return (
-    <li>
-      <span className="user">{username}</span>
-      <span className="time">{timestamp}</span>
-      {isEditing ? (
-        <EditMessage
-          id={id}
-          body={body}
-          onUpdateMessage={handleUpdateMessage}
-        />
-      ) : (
-        <p>{body}</p>
-      )}
-      {isCurrentUser ? (
-        <div className="actions">
-          <button onClick={() => setIsEditing((isEditing) => !isEditing)}>
-            <span role="img" aria-label="edit">
-              ✏️
-            </span>
-          </button>
-          <button onClick={handleDeleteClick}>
-            <span role="img" aria-label="delete">
-              🗑
-            </span>
-          </button>
-        </div>
-      ) : null}
-    </li>
+    <div>
+      <h2>Applicant List</h2>
+      <ApplicantList applicants={applicants} />
+    </div>
   );
 }
 
-export default Message;
+export default ApplicantPage;
