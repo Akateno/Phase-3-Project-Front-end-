@@ -53,6 +53,7 @@ function App() {
      <DogContainer/>
      <NavBar/>
      <ApplicantPage/>
+     <DogForm handleDogs={handleDogs}/>
 
 
     </main>
