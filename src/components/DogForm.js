@@ -12,7 +12,7 @@ function DogForm({handleAddDog}) {
   const handleNewDogs =(e)=>{
     e.preventDefault();
       
-    fetch('http://localhost:8001/transactions',{
+    fetch('http://localhost:9292/dogs',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json'
