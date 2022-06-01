@@ -5,12 +5,39 @@
   align-items: center;
   font-weight: bold;
 }
+.hometitle{
+  font-family: fantasy;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #C4ADC9;
+  padding: 20px;
+  width: 450px;
+  height: 50px;
+  
+}
+.DogPageHeader{
+  font-family: fantasy;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 25px;
+  border: 5px solid #C4ADC9;
+  padding: 20px;
+  width: 450px;
+  height: 50px;
+
+}
 .pageTitle{
   position:absolute;
   padding-top: 250px;
   padding-left: 950px;
 
 }
+
 .dogcontainer{
   background-color: rgba(246, 208, 18, 0.945);
   text-align: center;
@@ -22,8 +49,44 @@
   text-align: center;
   
 }
+@media (min-width: 768px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: calc(33% - 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: calc(25% - 2rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    width: calc(20% - 2rem);
+  }
+}
+.cards {
+  list-style: none;
+}
+
+.card {
+  margin: 1rem;
+}
 
 .cardPic {
+  width: 100%;
+}
+
+.card button {
+  margin-top: 0.5rem;
+}
+/* .cardPic {
   width: 500px;
   height: 500px; 
   background-size: contain;
@@ -32,10 +95,10 @@
   margin-right: auto;
   width: 40%;
   padding: 10px;
-  border: 5px solid rgb(44, 236, 247);
+  border: 10px solid #83CBEF;
   
  
-}
+} */
 
 
 

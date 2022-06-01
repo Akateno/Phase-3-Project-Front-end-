@@ -3,9 +3,11 @@ import React from "react"
 function Home() {
     return (
     <div className="homePage" >
-         
+        <div>
 
-        This is the HOMEPAGE
+            <h1 className="hometitle">Happy Tails Animal Rescue</h1>
+        </div>
+         
        
     </div>
     )
