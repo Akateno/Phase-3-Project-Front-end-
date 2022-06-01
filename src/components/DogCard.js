@@ -15,7 +15,7 @@ function DogCard({name, breed, age, trait, image, onDogDelete, id}) {
     }
 
   return ( <div className="card">
-  <img className="cardPic"src={image} alt={name} width="500" height="600"/>
+  <img className="cardPic"src={image} alt={name} />
   <h2>{name}</h2>
   <ul>
     <p><em><strong>Breed:</strong> {breed} </em> </p>
