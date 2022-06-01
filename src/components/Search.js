@@ -7,16 +7,22 @@ function Search({searchTerm, onChangeSearch}) {
   }
 
   return (
+    
+    <div className="wrap">
       <div className="searchbar">
-            <label htmlFor="search">Search Animals:</label>
-            <input width="500"
+            <label htmlFor="search">Search Dogs:</label>
+            <input 
+              className="searchTerm"
+              width="500"
               type="text"
               id="search"
-              placeholder="Type a name to search..."
+              placeholder="Choose your doggo..."
               value={searchTerm}
               onChange={handleChange}
           />
       </div>
+      </div>
+      
     );
   }
   

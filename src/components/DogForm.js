@@ -34,7 +34,7 @@ function DogForm({handleAddDog}) {
 };
 
   return (
-      <div className="ui segment">
+      <div className="ui segment"> 
         <form id='form' className="ui form" onClick={handleNewDogs} >
           <div className="inline fields" >
             <input type="text" name="name" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>

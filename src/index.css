@@ -1,10 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 .searchbar {
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: bold;
+  
+  
 }
+
+  
 .hometitle{
   font-family: fantasy;
   margin: auto;
@@ -83,9 +88,22 @@
 .cardPic {
   width: 100%;
 }
+.primary{
+  background-color: aliceblue;
+  border-radius: 10px;
+  
+}
 
 .card button {
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.traitList{
+  align-items: center;
+  background-color: aliceblue;
+  margin-left: 20px;
+  margin-right: 20px;
+  
 }
 /* .cardPic {
   width: 500px;
@@ -101,7 +119,19 @@
  
 } */
 
+.searchTerm {
+  width: 50%;
+  border: 3px solid #00B4CC;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #9DBFAF;
+}
 
+.searchTerm:focus{
+  color: #00B4CC;
+}
 
 
 

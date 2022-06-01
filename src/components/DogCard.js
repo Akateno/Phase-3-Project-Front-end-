@@ -17,7 +17,7 @@ function DogCard({name, breed, age, trait, image, onDogDelete, id}) {
   return ( <div className="card">
   <img className="cardPic"src={image} alt={name} />
   <h2>{name}</h2>
-  <ul>
+  <ul className= "traitList">
     <p><em><strong>Breed:</strong> {breed} </em> </p>
     <p><em><strong>Age:</strong> {age}</em></p>
     <p><em><strong>Personality:</strong> {trait}</em></p>
@@ -26,7 +26,7 @@ function DogCard({name, breed, age, trait, image, onDogDelete, id}) {
   {(adopt) ? (
     <button className="adopted"> Adopted!</button>
   ) : (
-    <button onClick={handleDeleteClick} className="primary">Adopt</button>
+    <button onClick={handleDeleteClick} className="primary">Adopt 🐕 </button>
   )}
 </div>)
   
