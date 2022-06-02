@@ -1,26 +1,21 @@
 import React from "react";
-import ApplicantCard from "./ApplicantCard";
 
-function ApplicantList({ applicants }) {
-  function handleListClick() {
-    ///
-  }
+function ApplicantList({ applicants, setId }) {
   return (
     <div className="appList">
       <div>
-        {applicants.map((applicant) => (
-          <ApplicantCard
-            key={applicant.id}
-            applicant={applicant}
-            onClick={handleListClick}
-          />
-        ))}
-      </div>
-      <div className="ProfileCard">
-        {/* <h2>Applicant Profile</h2> */}
-        <p></p>
-        <p></p>
-        <p></p>
+        <ul>
+          {applicants.map((applicant) => (
+            <li className="appCard" onClick={() => setId(applicant.id)}>
+              <h4>
+                <span role="img" alt="User emoji">
+                  👤
+                </span>
+                {applicant.name}
+              </h4>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

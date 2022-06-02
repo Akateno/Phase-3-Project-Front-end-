@@ -1,6 +1,5 @@
 import React from "react";
 import DogCard from "./DogCard";
-
 function DogList({ doggos, onDogDelete }) {
   return (
     <div className="cards">
@@ -20,5 +19,4 @@ function DogList({ doggos, onDogDelete }) {
     </div>
   );
 }
-
 export default DogList;
