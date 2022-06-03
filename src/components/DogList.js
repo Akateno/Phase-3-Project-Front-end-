@@ -1,6 +1,6 @@
 import React from "react";
 import DogCard from "./DogCard";
-function DogList({ doggos, onDogDelete }) {
+function DogList({ doggos, onDogDelete, onUpdateDog }) {
   return (
     <div className="cards">
       {doggos.map((animal) => (
@@ -13,7 +13,8 @@ function DogList({ doggos, onDogDelete }) {
           trait={animal.trait}
           image={animal.image}
           onDogDelete={onDogDelete}
-          doggos={doggos}
+          onUpdateDog={onUpdateDog}
+          
         />
       ))}
     </div>

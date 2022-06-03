@@ -177,7 +177,7 @@
 }
 
 .logoBackground {
-  background-image: url(../src/images/HTlogo.png);
+   background-image: url(../src/images/HTlogo.png);
   /* background-image: url(../src/images/HappyTails.png); */
   display: block;
   text-align: center;
@@ -230,4 +230,10 @@
 
 .custom-shape-divider-top-1654128639 .shape-fill {
   fill: #b8e986;
+}
+.nameText {
+  text-align: center;
+  /* padding: px; */
+  font-family: "Kaushan Script", cursive;
+  font-size: 60px;
 }

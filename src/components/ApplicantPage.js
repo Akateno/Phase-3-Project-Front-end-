@@ -21,22 +21,12 @@ function ApplicantPage() {
 
   const selectedApplicant = applicants.find((a) => a.id === id);
 
-  function handleUpdateApplicant(updatedApplicantObj) {
-    const updatedApplicants = applicants.map((applicant) => {
-      if (applicant.id === updatedApplicantObj.id) {
-        return updatedApplicantObj;
-      } else {
-        return applicant;
-      }
-    });
-    setApplicants(updatedApplicants);
-  }
 
   return (
     <div className="pendingApp">
       <h2 id="pendingAppHeader">Pending Applications</h2>
       <ApplicantProfile
-        onUpdateApplicant={handleUpdateApplicant}
+        
         applicant={selectedApplicant}
         dogs={dogs}
       />

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-function DogCard({ name, breed, age, trait, image, onDogDelete, id }) {
+import EditDog from "./EditDog";
+function DogCard({ name, breed, age, trait, image, onDogDelete, id, onUpdateDog }) {
   const [adopt, setAdopt] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   function handleDeleteClick() {
     fetch(`http://localhost:9292/dogs/${id}`, {
       method: "DELETE",
@@ -14,6 +16,7 @@ function DogCard({ name, breed, age, trait, image, onDogDelete, id }) {
       <ul className="traitList">
         <p>
           <em>
+            
             <strong>Breed:</strong> {breed}{" "}
           </em>{" "}
         </p>
@@ -28,12 +31,37 @@ function DogCard({ name, breed, age, trait, image, onDogDelete, id }) {
           </em>
         </p>
       </ul>
+      <button onClick={() => setIsEditing((isEditing) => !isEditing)}>
+            <span role="img" aria-label="edit">
+              ✏️
+            </span>
+          </button>
+
+
       {adopt ? (
         <button className="adopted"> Adopted!</button>
       ) : (
         <button onClick={handleDeleteClick} className="primary">
           Adopt 🐕
         </button>
+
+        
+      )}
+      {isEditing ? (
+        
+        <EditDog
+          id={id}
+          name={name}
+          breed={breed}
+          age={age}
+          trait={trait}
+          image={image}
+          onUpdateDog={onUpdateDog}
+        />
+
+        
+      ) : (
+        <p></p>
       )}
     </div>
   );

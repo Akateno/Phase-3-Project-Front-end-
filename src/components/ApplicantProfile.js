@@ -1,22 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 
-function ApplicantProfile({ applicant, dogs, onUpdateApplicant }) {
-  const [value, setValue] = useState("Dog applied for");
-
-  function handleSelect(e) {
-    setValue(e.target.value);
-    // fetch(`http://localhost:9292/applicants/${id}`, {
-    //   method: "PATCH",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     body: messageBody,
-    //   }),
-    // })
-    //   .then((r) => r.json())
-    //   .then((updatedApplicant) => onUpdateApplicant(updatedApplicant);
-  }
+function ApplicantProfile({ applicant }) {
+  
 
   return (
     <div>
@@ -33,17 +18,12 @@ function ApplicantProfile({ applicant, dogs, onUpdateApplicant }) {
             <p>Location: {applicant.city}</p>
             <p>Pets owned: {applicant.pets_owned}</p>
             <h5>Applied for: </h5>
-            <label>
+            
               {applicant.dog.name}
               <span role="img" alt="dog emoji">
                 🐕
               </span>
-              <select value={value} onChange={handleSelect}>
-                {dogs.map((dog) => {
-                  return <option value={dog.name}>{dog.name}</option>;
-                })}
-              </select>
-            </label>
+              
           </div>
         ) : (
           <p>

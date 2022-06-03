@@ -14,6 +14,7 @@ function Home() {
         <img src="./src/images/HTlogo.png" alt="Happy Tails Logo" /> */}
       </div>
       <div>
+      <h1 className="nameText">PetMatcher</h1>
         <h3 className="homeText">
           Review available animals, and process adoption applications with ease!
         </h3>
