@@ -6,21 +6,22 @@
   align-items: center;
   font-weight: bold;
 }
-
 .hometitle {
-  font-family: fantasy;
+  /* font-family: fantasy; */
+  font-family: "Kaushan Script", cursive;
   margin: auto;
   width: 50%;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   border-radius: 25px;
   border: 2px solid #c4adc9;
   padding: 20px;
   width: 450px;
   height: 50px;
+  font-size: 40px;
 }
 .DogPageHeader {
-  font-family: fantasy;
+  font-family: "Kaushan Script", cursive;
   margin: auto;
   width: 50%;
   text-align: center;
@@ -36,10 +37,10 @@
   padding-top: 250px;
   padding-left: 950px;
 }
-
 .dogcontainer {
-  background-color: rgba(246, 208, 18, 0.945);
+  background-color: #ffde59;
   text-align: center;
+  border-radius: 15px;
 }
 .card {
   color: black;
@@ -52,18 +53,15 @@
     display: flex;
     flex-wrap: wrap;
   }
-
   .card {
     width: calc(33% - 2rem);
   }
 }
-
 @media (min-width: 1024px) {
   .card {
     width: calc(25% - 2rem);
   }
 }
-
 @media (min-width: 1200px) {
   .card {
     width: calc(20% - 2rem);
@@ -72,19 +70,17 @@
 .cards {
   list-style: none;
 }
-
 .card {
   margin: 1rem;
 }
-
 .cardPic {
   width: 100%;
+  border: 2px solid #83cbef;
 }
 .primary {
   background-color: aliceblue;
   border-radius: 10px;
 }
-
 .card button {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -94,10 +90,12 @@
   background-color: aliceblue;
   margin-left: 20px;
   margin-right: 20px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /* .cardPic {
   width: 500px;
-  height: 500px; 
+  height: 500px;
   background-size: contain;
   display: block;
   margin-left: auto;
@@ -105,10 +103,7 @@
   width: 40%;
   padding: 10px;
   border: 10px solid #83CBEF;
-  
- 
 } */
-
 .searchTerm {
   width: 50%;
   border: 3px solid #00b4cc;
@@ -118,17 +113,24 @@
   outline: none;
   color: #9dbfaf;
 }
-
 .searchTerm:focus {
   color: #00b4cc;
 }
 
-.appCard {
+/* .appCard {
   display: inline-block;
   padding: 20px;
   border: 5px solid black;
   margin: 30px;
   text-align: center;
+  background-color: #9dbfaf;
+} */
+
+.appCard {
+  list-style: none;
+  /* margin-right: 1800px; */
+  text-align: left;
+  width: 200px;
 }
 
 .appCard:hover {
@@ -140,15 +142,92 @@
   border: 2px solid black;
 }
 
-.pendingApp {
+/* .pendingApp {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
   padding-left: 20%;
   padding-right: 5%;
+  background-color: #83cbef;
+  border-radius: 15px;
+} */
+
+.ProfileCard {
+  margin-left: 500px;
+  display: flow-root;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 30px;
+  text-align: left;
+  background-color: #9dbfaf;
 }
 
 #pendingAppHeader {
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 36px;
+  background-color: #b8e986;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px dotted #000;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+}
+
+.logoBackground {
+  background-image: url(../src/images/HTlogo.png);
+  /* background-image: url(../src/images/HappyTails.png); */
+  display: block;
+  text-align: center;
+  width: 97%;
+  height: 275px;
+}
+
+.homeText {
+  text-align: center;
+  padding: 40px;
+  font-family: "Kaushan Script", cursive;
+  font-size: 40px;
+}
+/* HOME PAGE DESIGN */
+.custom-shape-divider-bottom-1654126488 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1654126488 svg {
+  position: relative;
+  display: block;
+  width: calc(140% + 1.3px);
+  height: 308px;
+}
+
+.custom-shape-divider-bottom-1654126488 .shape-fill {
+  fill: #71c023e0;
+}
+/* APPLICATION PAGE DESIGN */
+.custom-shape-divider-top-1654128639 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1654128639 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 500px;
+}
+
+.custom-shape-divider-top-1654128639 .shape-fill {
+  fill: #b8e986;
 }
