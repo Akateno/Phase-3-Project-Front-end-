@@ -45,7 +45,7 @@ function DogForm({ handleAddDog }) {
           noValidate
           autoComplete="off"
         >
-          <h3>Add Dog</h3>
+          <h3>New Animal</h3>
           <FormGroup
             onSubmit={handleNewDogs}
             sx={{

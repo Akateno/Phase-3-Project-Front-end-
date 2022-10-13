@@ -4,9 +4,9 @@ Backend for this project: https://github.com/samkcrespo/phase-3-sinatra-react-pr
 
 This application reatures RESTful architecture, CRUD actions, and using the following technologies: React.js, React Routing, Sinatra, Ruby
 
-![Project Iamges](PM_Home.png "Pet Matcher Home Page with User/Shelter Logo")
-![Project Iamges](PM_Adopt.png "Pet Matcher Adoptable Pets Page")
-![Project Iamges](PM_Applicant.png "Pet Matcher Pending Application Page")
+![Project Images](PM_Home.png "Pet Matcher Home Page with User/Shelter Logo")
+![Project Images](PM_Adopt.png "Pet Matcher Adoptable Pets Page")
+![Project Images](PM_Applicant.png "Pet Matcher Pending Application Page")
 
 ## CREATE REACT APP TEMPLATE INSTRUCTIONS
 

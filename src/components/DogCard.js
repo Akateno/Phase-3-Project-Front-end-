@@ -29,7 +29,10 @@ function DogCard({
   return (
     // <div className="card">
     <div>
-      <Card spacing={2} sx={{ maxWidth: 900, margin: "auto", padding: 10 }}>
+      <Card
+        spacing={2}
+        sx={{ maxWidth: 700, margin: "auto", padding: 10, spacing: 2 }}
+      >
         <CardActionArea>
           <CardMedia
             component="img"
