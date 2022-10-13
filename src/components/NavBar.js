@@ -17,12 +17,24 @@ function NavBar() {
       <NavLink
         to="/"
         exact
-        style={linkStyles}
+        style={{
+          display: "inline-block",
+          width: "180px",
+          padding: "12px",
+          margin: "6px 6px 6px",
+          background: "#ffde59",
+          textDecoration: "none",
+          color: "black",
+          borderRadius: "5px",
+          fontFamily: "Kaushan Script",
+          fontSize: "18px",
+          fontWeight: "bold",
+        }}
         activeStyle={{
           background: "lightblue",
         }}
       >
-        Home
+        PetMatcher
       </NavLink>
       <NavLink
         style={linkStyles}

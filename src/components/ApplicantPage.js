@@ -21,16 +21,21 @@ function ApplicantPage() {
 
   const selectedApplicant = applicants.find((a) => a.id === id);
 
-
   return (
     <div className="pendingApp">
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Kumbh+Sans:wght@500;600&family=Source+Code+Pro:wght@300&display=swap"
+        rel="stylesheet"
+      ></link>
       <h2 id="pendingAppHeader">Pending Applications</h2>
-      <ApplicantProfile
-        
-        applicant={selectedApplicant}
-        dogs={dogs}
-      />
-      <ApplicantList setId={setId} applicants={applicants} />
+      <div className="rowC">
+        <ApplicantProfile applicant={selectedApplicant} dogs={dogs} />
+        <ApplicantList setId={setId} applicants={applicants} />
+      </div>
+      {/* <ApplicantProfile applicant={selectedApplicant} dogs={dogs} />
+      <ApplicantList setId={setId} applicants={applicants} /> */}
     </div>
   );
 }

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import Search from "./Search";
 import DogList from "./DogList";
@@ -24,12 +23,11 @@ function DogContainer() {
     const updatedDogs = dogs.filter((dog) => dog.id !== id);
     setDogs(updatedDogs);
   }
-  
+
   const displayedDogs = dogs.filter((anim) =>
     anim.name.toLowerCase().includes(search.toLowerCase())
   );
 
-  // hopefully updates dogs
   function handleUpdateDog(updatedDog) {
     const updatedDogs = dogs.map((dog) => {
       if (dog.id === updatedDog.id) {
@@ -41,8 +39,6 @@ function DogContainer() {
     setDogs(updatedDogs);
   }
 
-
-
   return (
     <div className="dogcontainer">
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,9 +48,17 @@ function DogContainer() {
         rel="stylesheet"
       ></link>
       <h1 className="DogPageHeader">Happy Tails Animal Rescue!</h1>
-      <Search searchTerm={search} onChangeSearch={setSearch} />
-      {<DogForm handleAddDog={handleAddDog} />}
-      <DogList doggos={displayedDogs} onDogDelete={handleDeleteDog} onUpdateDog={handleUpdateDog} />
+      <div>
+        <Search searchTerm={search} onChangeSearch={setSearch} />
+      </div>
+      <div className="rowC">
+        {<DogForm handleAddDog={handleAddDog} />}
+        <DogList
+          doggos={displayedDogs}
+          onDogDelete={handleDeleteDog}
+          onUpdateDog={handleUpdateDog}
+        />
+      </div>
     </div>
   );
 }
